@@ -1,13 +1,13 @@
 {
-    "version": "2025.3.1-253.29346.138",
+    "version": "2024.3.7-243.28141.18",
     "description": "Cross-Platform IDE for Java by JetBrains.",
     "homepage": "https://www.jetbrains.com/idea/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.jetbrains.com/store/license.html"
     },
-    "url": "https://download.jetbrains.com/idea/ideaIU-2025.3.1.win.zip",
-    "hash": "0ce0892f643d3386efbbda69f1433a784defef4f86b0eb65f9e821dc39744d78",
+    "url": "https://download.jetbrains.com/idea/ideaIU-2024.3.7.win.zip",
+    "hash": "52860ff4cac9740a50c6deca976049155881bb146a7d91302892633f6e4cda26",
     "extract_to": "IDE",
     "pre_install": "Get-ChildItem \"$persist_dir\\IDE\\bin\\idea*.exe.vmoptions\" -ErrorAction SilentlyContinue | Copy-Item -Destination \"$dir\\IDE\\bin\"",
     "installer": {
@@ -42,16 +42,5 @@
         "IDE\\bin\\idea.properties",
         "profile"
     ],
-    "pre_uninstall": "Get-ChildItem \"$dir\\IDE\\bin\\idea*.exe.vmoptions\" -ErrorAction SilentlyContinue | Copy-Item -Destination \"$persist_dir\\IDE\\bin\"",
-    "checkver": {
-        "url": "https://data.services.jetbrains.com/products/releases?code=IIU&latest=true&platform=zip&type=release",
-        "regex": "version\":\"(?<ver>[\\d.]+)\".*\"build\":\"(?<build>[\\d.]+)\"",
-        "replace": "${ver}-${build}"
-    },
-    "autoupdate": {
-        "url": "https://download.jetbrains.com/idea/ideaIU-$matchVer.win.zip",
-        "hash": {
-            "url": "$url.sha256"
-        }
-    }
+    "pre_uninstall": "Get-ChildItem \"$dir\\IDE\\bin\\idea*.exe.vmoptions\" -ErrorAction SilentlyContinue | Copy-Item -Destination \"$persist_dir\\IDE\\bin\""
 }
